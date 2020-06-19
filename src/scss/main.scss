@@ -1,0 +1,264 @@
+$segment-top-background: #3fa8f2;
+$segment-top-color: #ffffff;
+
+$segment-skills-background: #ffffff;
+$segment-skills-color: #f23f75;
+
+$padding-xxs: 4px;
+$padding-xs: 8px;
+$padding-s: 12px;
+$padding-m: 18px;
+$padding-l: 28px;
+$padding-xl: 48px;
+
+$content-max-width: 1020px; 
+$mobile-max-width: 640px;
+
+body { margin: 0; };
+* { box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+a { text-decoration: none; }
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: $padding-m;
+
+	&-logo {
+		border: 2px solid $segment-top-color;
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+		font-size: 24px;
+		width: 36px;
+		height: 36px;
+		color: $segment-top-color;
+	}
+}
+
+.segment {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: $padding-l $padding-m;
+	max-width: $content-max-width;
+
+	&-top,
+	&-contacts {
+		width: 100%;
+		background: $segment-top-background;
+	}
+
+	&-works,
+	&-skills {
+		width: 100%;
+		background: $segment-top-color;
+	}
+
+	&.top {
+		height: 50vh;
+		display: flex;
+		align-items: center;
+	}
+
+	&.skills {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&.works {
+		padding-top: $padding-xl;
+		padding-bottom: $padding-xl;
+		display: flex;
+		flex-direction: row;
+	}
+
+	&.contacts {
+		padding-top: $padding-xl;
+		padding-bottom: $padding-xl;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.picked {
+	display: inline-block;
+	line-height: 0.6em;
+	border-bottom: 0.2em solid $segment-skills-color;
+
+	&:hover {
+		color: $segment-skills-color;
+		border-bottom-color: $segment-skills-background;
+	}
+}
+
+a.picked {
+	line-height: 0.8em;
+	border-bottom: 0.1em solid $segment-skills-color;
+}
+
+.top {
+	&-title {
+		font-size: 54px;
+		font-weight: 900;
+		color: $segment-top-color;
+		line-height: 1.05em;
+		letter-spacing: 0.1em;
+		cursor: default;
+
+		&:before, &:after {
+			display: block;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.2em;
+			padding: 4px 16px;
+		}
+
+		&:before{
+			content: '<greeting>';
+		}
+
+		&:after{
+			content: '</greeting>';
+		}
+	}
+}
+
+.skills {
+	color: $segment-skills-color;
+
+	&-title {
+		font-size: 54px;
+		font-weight: 600;
+		line-height: 1em;
+	}
+
+	&-text {
+		margin-top: $padding-l; 
+		font-size: 24px;
+		font-weight: 400;
+		letter-spacing: 0.05em;
+	}
+
+
+	.picked {
+		cursor: default;
+		line-height: 0.7em;
+		border-bottom: 0.15em solid $segment-top-background;
+
+		&:hover {
+			color: $segment-top-background;
+			border-bottom-color: $segment-skills-background;
+		}
+	}
+}
+
+.works {
+	color: $segment-top-background;
+
+	&-title {
+		font-size: 36px;
+		font-weight: 900;
+		line-height: 1.05em;
+		letter-spacing: 0.1em;
+		cursor: default;
+		width: 50%;
+    	padding-right: $padding-xl;
+
+		&:before, &:after {
+			display: block;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.2em;
+			padding: 4px 16px;
+		}
+
+		&:before{
+			content: '<my projects>';
+		}
+
+		&:after{
+			content: '</my projects>';
+		}
+	}
+
+	&-list {
+		width: 50%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	&-item {
+		padding: $padding-m;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+
+		& > a {
+			font-size: 24px;
+			font-weight: 900;
+			width: fit-content;
+
+			&:visited {
+				color: $segment-top-background;
+			}
+		}
+
+		& > span {
+			margin-top: $padding-xs;
+		}
+	}
+}
+
+.contacts {
+	color: $segment-top-color;
+
+	&-title {
+		font-size: 24px;
+	}
+
+	&-list {
+		margin-top: $padding-m; 
+		font-size: 24px;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		a {
+			color: white;
+		}
+	}
+}
+
+@media (max-width: $mobile-max-width) {
+	.segment.works {
+		flex-direction: column;
+	}
+
+	.top-title {
+		font-size: 36px;
+	}
+
+	.works-title {
+		width: 100%;
+	}
+
+	.works-item {
+		width: 100%;
+	}
+
+	.works-list {
+		width: 100%;
+    	margin-top: $padding-l;
+	}
+
+	.contacts-list {
+		font-size: 20px;
+	}
+}
