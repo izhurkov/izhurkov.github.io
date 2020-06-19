@@ -136,6 +136,7 @@ a.picked {
     display: flex;
     flex-direction: column; }
     .works-item > a {
+      color: #3fa8f2;
       font-size: 24px;
       font-weight: 900;
       width: fit-content; }
